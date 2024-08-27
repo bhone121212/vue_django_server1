@@ -1,0 +1,28 @@
+module.exports = {
+  publicPath: '/',
+  devServer: {
+    allowedHosts: [
+      '.iscacapital.com'
+    ],
+     proxy: {
+      '/api': {
+        target: 'http://43.231.66.174:8000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/api'
+        },	      
+       '/ws': {
+	       target: 'wss://192.168.11.86:8080',
+        ws: true,
+        changeOrigin: true,
+        secure: false
+      },	      
+      }
+    }
+  },
+  transpileDependencies: [
+    'axios',
+    'vue-router',
+  ]
+};
+

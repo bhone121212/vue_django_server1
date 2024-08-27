@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vue
+  template:
+    metadata:
+      labels:
+        app: vue
+    spec:
+      containers:
+      - name: vue
+        image: bhonebhone/vue-app:latest
+        ports:
+        - containerPort: 5000  # Updated to match the Docker run command port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vue-service
+spec:
+  type: NodePort
+  selector:
+    app: vue
+  ports:
+    - protocol: TCP
+      port: 5000         # Service port
+      targetPort: 5000   # Port on the container where the app is running
+      nodePort: 30009    # NodePort (must be in the range 30000-32767)
