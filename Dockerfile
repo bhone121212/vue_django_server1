@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Install @popperjs/core
+#RUN npm install @popperjs/core --save
+
 # Copy the rest of the application code to the working directory
 COPY . .
 
