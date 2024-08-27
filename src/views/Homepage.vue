@@ -23,7 +23,7 @@
             <h5>{{ news.title }}</h5>
           </div>
           <h2>{{ news.content }}</h2>
-          <router-link :to="news.link" class="btn btn-primary">အသေးစိတ်ကြည့်ရှုရန်</router-link>
+          <router-link :to="news.link" class="btn btn-primary">အသေးစိတ်ကြည့်ရှုရန်နှိပ်ပါဗျာ</router-link>
         </div>
       </div>
     </div>
