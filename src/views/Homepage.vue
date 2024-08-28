@@ -25,7 +25,7 @@
           </div>
           <h2>{{ news.content }}</h2>
           <router-link :to="news.link" class="btn btn-primary"
-            >ကြည့်ရှုရန်</router-link
+            >အသေးစိတ် ကြည့်ရှုရန်!!!!!!!!!!!!!!!!</router-link
           >
         </div>
       </div>
