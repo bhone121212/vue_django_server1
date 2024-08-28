@@ -1,8 +1,9 @@
 <template>
   <div class="info-home">
-    <div class="container"
-      :style="{ 
-        backgroundImage: 'url(' + require('@/assets/logo1.png') + ')', 
+    <div
+      class="container"
+      :style="{
+        backgroundImage: 'url(' + require('@/assets/logo1.png') + ')',
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -10,20 +11,22 @@
         padding: '20px',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
-      }">  
-    </div>
+        justifyContent: 'center',
+      }"
+    ></div>
     <div class="container" id="news">
       <div class="newsItem" v-for="(news, index) in newsItems" :key="index">
         <div class="newsImage">
-          <img :src="news.image" alt="">
+          <img :src="news.image" alt="" />
         </div>
         <div class="newsContent">
           <div class="info">
             <h5>{{ news.title }}</h5>
           </div>
           <h2>{{ news.content }}</h2>
-          <router-link :to="news.link" class="btn btn-primary">အသေးစိတ်ကြည့်ရှုရန်</router-link>
+          <router-link :to="news.link" class="btn btn-primary"
+            >ကြည့်ရှုရန်</router-link
+          >
         </div>
       </div>
     </div>
@@ -35,12 +38,27 @@ export default {
   data() {
     return {
       newsItems: [
-        { image: require('@/assets/combat.jpg'), title: '', content: 'Welcome from Combat News Page', link: '/combathome' },
-        { image: require('@/assets/factckeck.jpg'), title: '', content: 'Welcome from Fact Check Page', link: '/factcheck' },
-        { image: require('@/assets/infosheet.png'), title: '', content: 'Welcome from Information Sheet Page', link: '/infohome' },
-      ]
+        {
+          image: require("@/assets/combat.jpg"),
+          title: "",
+          content: "Welcome from Combat News Page",
+          link: "/combathome",
+        },
+        {
+          image: require("@/assets/factckeck.jpg"),
+          title: "",
+          content: "Welcome from Fact Check Page",
+          link: "/factcheck",
+        },
+        {
+          image: require("@/assets/infosheet.png"),
+          title: "",
+          content: "Welcome from Information Sheet Page",
+          link: "/infohome",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 
